@@ -1,0 +1,1 @@
+"""Autodistill MCP server for training computer vision models.""" 
