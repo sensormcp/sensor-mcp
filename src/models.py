@@ -1,4 +1,4 @@
-"""Model management functions for Autodistill MCP server."""
+"""Model management functions for SensorMCP server."""
 
 import os
 import torch

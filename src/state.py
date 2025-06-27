@@ -1,4 +1,4 @@
-"""State management for the Autodistill MCP server (fixed data paths, EN comments)."""
+"""State management for the SensorMCP server (fixed data paths, EN comments)."""
 
 import os
 from typing import Any, Dict

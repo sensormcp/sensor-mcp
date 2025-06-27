@@ -1,10 +1,10 @@
-# Autodistill MCP Server
+# SensorMCP Server
 
-An **Autodistill Model Context Protocol (MCP) Server** that enables automated dataset creation and custom object detection model training through natural language interactions. This project integrates computer vision capabilities with Large Language Models using the MCP standard.
+A **SensorMCP Model Context Protocol (MCP) Server** that enables automated dataset creation and custom object detection model training through natural language interactions. This project integrates computer vision capabilities with Large Language Models using the MCP standard.
 
 ## 🌟 About
 
-**Autodistill MCP Server** combines the power of foundation models (like GroundedSAM) with custom model training (YOLOv8) to create a seamless workflow for object detection. Using the Model Context Protocol, it enables LLMs to:
+**SensorMCP Server** combines the power of foundation models (like GroundedSAM) with custom model training (YOLOv8) to create a seamless workflow for object detection. Using the Model Context Protocol, it enables LLMs to:
 
 - Automatically label images using foundation models
 - Create custom object detection datasets
@@ -68,7 +68,7 @@ Add to your MCP client configuration:
 ```json
 {
     "mcpServers": {
-        "autodistill-server": {
+        "sensormcp-server": {
             "type": "stdio",
             "command": "uv",
             "args": [

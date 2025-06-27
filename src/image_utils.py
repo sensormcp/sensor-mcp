@@ -1,4 +1,4 @@
-"""Image utilities and Unsplash API integration for Autodistill MCP server."""
+"""Image utilities and Unsplash API integration for SensorMCP server."""
 
 import json
 import math
