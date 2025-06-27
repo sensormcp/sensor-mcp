@@ -7,16 +7,9 @@
   <meta property="og:title" content="SensorMCP Server - AI-Powered Computer Vision"/>
   <meta property="og:description" content="Automated dataset creation and custom object detection model training through natural language interactions using the Model Context Protocol"/>
   <meta property="og:url" content=""/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/images/carousel1.jpg" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-
   <meta name="twitter:title" content="SensorMCP Server - AI-Powered Computer Vision">
   <meta name="twitter:description" content="Automated dataset creation and custom object detection model training through natural language interactions">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/carousel1.jpg">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary">
   <!-- Keywords for your paper to be indexed by-->
   <meta name="keywords" content="computer vision, object detection, MCP, model context protocol, autodistill, YOLOv8, GroundedSAM, automated labeling, dataset creation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,18 +20,13 @@
   rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
 </head>
 <body>
@@ -52,11 +40,11 @@
             <div class="is-size-5 publication-authors">
               <!-- Project contributors -->
               <span class="author-block">
-                <a href="mailto:yq@anysign.net" target="_blank">Research Team</a></span>
+                <a href="mailto:yq@anysign.net" target="_blank">SensorMCP Team</a></span>
             </div>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block">Computer Vision Research Lab<br>2024</span>
+              <span class="author-block">Yunqi Guo, Guanyu Zhu, Kaiwei Liu, Guoliang Xing<br>2025</span>
             </div>
 
             <div class="column has-text-centered">
@@ -112,15 +100,10 @@
 </div>
 </section>
 
-<!-- Teaser video-->
+<!-- Introduction -->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
       <h2 class="subtitle has-text-centered">
         SensorMCP Server enables seamless integration between Large Language Models and computer vision workflows, 
         automatically creating labeled datasets and training custom object detection models through natural language interactions.
@@ -128,7 +111,7 @@
     </div>
   </div>
 </section>
-<!-- End teaser video -->
+<!-- End introduction -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -155,49 +138,41 @@
 </section>
 <!-- End paper abstract -->
 
-<!-- Features carousel -->
+<!-- Key Features -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Key Features</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="Foundation Model Integration"/>
-        <h2 class="subtitle has-text-centered">
-          <strong>Foundation Model Integration</strong><br>
-          Uses GroundedSAM for automatic image labeling and object detection.
-        </h2>
+      <div class="columns is-multiline">
+        <div class="column is-half">
+          <div class="content has-text-centered">
+            <h4><strong>Foundation Model Integration</strong></h4>
+            <p>Uses GroundedSAM for automatic image labeling and object detection.</p>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="content has-text-centered">
+            <h4><strong>Custom Model Training</strong></h4>
+            <p>Fine-tune YOLOv8 models on your specific objects and datasets.</p>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="content has-text-centered">
+            <h4><strong>MCP Protocol Integration</strong></h4>
+            <p>Native integration with LLM workflows and chat interfaces.</p>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="content has-text-centered">
+            <h4><strong>Automated Dataset Creation</strong></h4>
+            <p>Download images from Unsplash and automatically create labeled datasets.</p>
+          </div>
+        </div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Custom Model Training"/>
-        <h2 class="subtitle has-text-centered">
-          <strong>Custom Model Training</strong><br>
-          Fine-tune YOLOv8 models on your specific objects and datasets.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MCP Protocol Integration"/>
-        <h2 class="subtitle has-text-centered">
-         <strong>MCP Protocol Integration</strong><br>
-         Native integration with LLM workflows and chat interfaces.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Automated Dataset Creation"/>
-      <h2 class="subtitle has-text-centered">
-        <strong>Automated Dataset Creation</strong><br>
-        Download images from Unsplash and automatically create labeled datasets.
-      </h2>
     </div>
   </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
+<!-- End key features -->
 
 <!-- Architecture Overview -->
 <section class="hero is-small is-light">
@@ -231,50 +206,35 @@
   </div>
 </section>
 
-<!-- Video carousel -->
+<!-- Demo Workflow -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Demo Videos</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered">
-            <strong>Setting up Ontology</strong><br>
-            Defining object classes through natural language commands.
-          </h2>
+      <h2 class="title is-3">Demo Workflow</h2>
+      <div class="columns is-multiline">
+        <div class="column is-one-third">
+          <div class="content has-text-centered">
+            <h4><strong>1. Setting up Ontology</strong></h4>
+            <p>Defining object classes through natural language commands.</p>
+          </div>
         </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered">
-            <strong>Automatic Labeling</strong><br>
-            Foundation models automatically generating labels and bounding boxes.
-          </h2>
+        <div class="column is-one-third">
+          <div class="content has-text-centered">
+            <h4><strong>2. Automatic Labeling</strong></h4>
+            <p>Foundation models automatically generating labels and bounding boxes.</p>
+          </div>
         </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered">
-            <strong>Model Training</strong><br>
-            Training custom YOLOv8 models on automatically labeled datasets.
-          </h2>
+        <div class="column is-one-third">
+          <div class="content has-text-centered">
+            <h4><strong>3. Model Training</strong></h4>
+            <p>Training custom YOLOv8 models on automatically labeled datasets.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End video carousel -->
+<!-- End demo workflow -->
 
 <!-- Technical Specifications -->
 <section class="section hero is-light" id="demo">
