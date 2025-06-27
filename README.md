@@ -189,6 +189,24 @@ See `pyproject.toml` for full dependency list. Key dependencies:
 4. Add tests for new functionality
 5. Submit a pull request
 
+## 📖 Citation
+
+If you use this code or data in your research, please cite our paper:
+
+```bibtex
+@inproceedings{Guo2025,
+  author = {Guo, Yunqi and Zhu, Guanyu and Liu, Kaiwei and Xing, Guoliang},
+  title = {A Model Context Protocol Server for Custom Sensor Tool Creation},
+  booktitle = {3rd International Workshop on Networked AI Systems (NetAISys '25)},
+  year = {2025},
+  month = {jun},
+  address = {Anaheim, CA, USA},
+  publisher = {ACM},
+  doi = {10.1145/3711875.3736687},
+  isbn = {979-8-4007-1453-5/25/06}
+}
+```
+
 ## 📄 License
 
 This project is licensed under the MIT License.
