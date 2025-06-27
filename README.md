@@ -1,53 +1,199 @@
-# Academic Project Page Template
-This is an academic paper project page template.
+# Autodistill MCP Server
 
+An **Autodistill Model Context Protocol (MCP) Server** that enables automated dataset creation and custom object detection model training through natural language interactions. This project integrates computer vision capabilities with Large Language Models using the MCP standard.
 
-Example project pages built using this template are:
-- https://horwitz.ai/probex
-- https://vision.huji.ac.il/probegen
-- https://horwitz.ai/mother
-- https://horwitz.ai/spectral_detuning
-- https://vision.huji.ac.il/ladeda
-- https://vision.huji.ac.il/dsire
-- https://horwitz.ai/podd
-- https://dreamix-video-editing.github.io
-- https://horwitz.ai/conffusion
-- https://horwitz.ai/3d_ads/
-- https://vision.huji.ac.il/ssrl_ad
-- https://vision.huji.ac.il/deepsim
+## 🌟 About
 
+**Autodistill MCP Server** combines the power of foundation models (like GroundedSAM) with custom model training (YOLOv8) to create a seamless workflow for object detection. Using the Model Context Protocol, it enables LLMs to:
 
+- Automatically label images using foundation models
+- Create custom object detection datasets
+- Train specialized detection models
+- Download images from Unsplash for training data
 
-## Start using the template
-To start using the template click on `Use this Template`.
+> [!NOTE] The Model Context Protocol (MCP) enables seamless integration between LLMs and external tools, making this ideal for AI-powered computer vision workflows.
 
-The template uses html for controlling the content and css for controlling the style. 
-To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
+## ✨ Features
 
-**IMPORTANT!** Make sure to replace the `favicon.ico` under `static/images/` with one of your own, otherwise your favicon is going to be a dreambooth image of me.
+- **Foundation Model Integration**: Uses GroundedSAM for automatic image labeling
+- **Custom Model Training**: Fine-tune YOLOv8 models on your specific objects
+- **Image Data Management**: Download images from Unsplash or import local images
+- **Ontology Definition**: Define custom object classes through natural language
+- **MCP Protocol**: Native integration with LLM workflows and chat interfaces
+- **Fixed Data Structure**: Organized directory layout for reproducible workflows
 
-## Components
-- Teaser video
-- Images Carousel
-- Youtube embedding
-- Video Carousel
-- PDF Poster
-- Bibtex citation
+## 🛠️ Installation
 
-## Tips:
-- The `index.html` file contains comments instructing you what to replace, you should follow these comments.
-- The `meta` tags in the `index.html` file are used to provide metadata about your paper 
-(e.g. helping search engine index the website, showing a preview image when sharing the website, etc.)
-- The resolution of images and videos can usually be around 1920-2048, there rarely a need for better resolution that take longer to load. 
-- All the images and videos you use should be compressed to allow for fast loading of the website (and thus better indexing by search engines). For images, you can use [TinyPNG](https://tinypng.com), for videos you can need to find the tradeoff between size and quality.
-- When using large video files (larger than 10MB), it's better to use youtube for hosting the video as serving the video from the website can take time.
-- Using a tracker can help you analyze the traffic and see where users came from. [statcounter](https://statcounter.com) is a free, easy to use tracker that takes under 5 minutes to set up. 
-- This project page can also be made into a github pages website.
-- Replace the favicon to one of your choosing (the default one is of the Hebrew University). 
-- Suggestions, improvements and comments are welcome, simply open an issue or contact me. You can find my contact information at [https://horwitz.ai](https://horwitz.ai)
+### Prerequisites
 
-## Acknowledgments
-Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
+- **uv** for package management
+- **Python 3.13+** (`uv python install 3.13`)
+- **CUDA-compatible GPU** (recommended for training)
 
-## Website License
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+### Setup
+
+1. **Clone the repository**:
+```bash
+git clone <repository-url>
+cd sensor-mcp
+```
+
+2. **Install dependencies**:
+```bash
+uv sync
+```
+
+3. **Set up environment variables** (create `.env` file):
+```bash
+UNSPLASH_API_KEY=your_unsplash_api_key_here
+```
+
+## 🚀 Usage
+
+### Running the MCP Server
+
+**For MCP integration** (recommended):
+```bash
+uv run src/zoo_mcp.py
+```
+
+**For standalone web server**:
+```bash
+uv run src/server.py
+```
+
+### MCP Configuration
+
+Add to your MCP client configuration:
+```json
+{
+    "mcpServers": {
+        "autodistill-server": {
+            "type": "stdio",
+            "command": "uv",
+            "args": [
+                "--directory",
+                "/path/to/sensor-mcp",
+                "run",
+                "src/zoo_mcp.py"
+            ]
+        }
+    }
+}
+```
+
+### Available MCP Tools
+
+1. **list_available_models()** - View supported base and target models
+2. **define_ontology(objects_list)** - Define object classes to detect
+3. **set_base_model(model_name)** - Initialize foundation model for labeling
+4. **set_target_model(model_name)** - Initialize target model for training
+5. **fetch_unsplash_images(query, max_images)** - Download training images
+6. **import_images_from_folder(folder_path)** - Import local images
+7. **label_images()** - Auto-label images using the base model
+8. **train_model(epochs, device)** - Train custom detection model
+
+### Example Workflow
+
+Through your MCP-enabled LLM interface:
+
+1. **Define what to detect**:
+   ```
+   Define ontology for "tiger, elephant, zebra"
+   ```
+
+2. **Set up models**:
+   ```
+   Set base model to grounded_sam
+   Set target model to yolov8n.pt
+   ```
+
+3. **Get training data**:
+   ```
+   Fetch 50 images from Unsplash for "wildlife animals"
+   ```
+
+4. **Create dataset**:
+   ```
+   Label all images using the base model
+   ```
+
+5. **Train custom model**:
+   ```
+   Train model for 100 epochs on device 0
+   ```
+
+## 📁 Project Structure
+
+```
+sensor-mcp/
+├── src/
+│   ├── server.py          # Main MCP server implementation
+│   ├── zoo_mcp.py         # MCP entry point
+│   ├── models.py          # Model management and training
+│   ├── image_utils.py     # Image processing and Unsplash API
+│   ├── state.py           # Application state management
+│   └── data/              # Created automatically
+│       ├── raw_images/    # Original/unlabeled images
+│       ├── labeled_images/# Auto-labeled datasets  
+│       └── models/        # Trained model weights
+├── static/                # Web interface assets
+└── index.html            # Web interface template
+```
+
+## 🔧 Supported Models
+
+### Base Models (for auto-labeling)
+- **GroundedSAM**: Foundation model for object detection and segmentation
+
+### Target Models (for training)
+- **YOLOv8n.pt**: Nano - fastest inference
+- **YOLOv8s.pt**: Small - balanced speed/accuracy
+- **YOLOv8m.pt**: Medium - higher accuracy
+- **YOLOv8l.pt**: Large - high accuracy
+- **YOLOv8x.pt**: Extra Large - highest accuracy
+
+## 🌐 API Integration
+
+### Unsplash API
+To use image download functionality:
+1. Create an account at [Unsplash Developers](https://unsplash.com/developers)
+2. Create a new application
+3. Add your access key to the `.env` file
+
+## 🛠️ Development
+
+### Running Tests
+```bash
+uv run pytest
+```
+
+### Code Formatting
+```bash
+uv run black src/
+```
+
+## 📋 Requirements
+
+See `pyproject.toml` for full dependency list. Key dependencies:
+- `mcp[cli]` - Model Context Protocol
+- `autodistill` - Foundation model integration
+- `torch` & `torchvision` - Deep learning framework
+- `ultralytics` - YOLOv8 implementation
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests for new functionality
+5. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 📧 Contact
+
+For questions about the zoo dataset mentioned in development:
+**Email**: yq@anysign.net
